@@ -1,0 +1,115 @@
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127967002-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-127967002-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> DocChain | Mon profil</title>
+    <link rel="shortcut icon" href="https://gateway.ipfs.io/ipfs/QmQdNiAkgBdbDpscdnQAyEaNfKTgiYXwohFcwmmCGVGQNv">
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="IPFS Cloud"/>
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image" content="https://gateway.ipfs.io/ipfs/QmRLzph5w13K8MKb2wj9bcJ8gQxQBFho4HG1p5pGpWimn9"/>
+    <meta property="og:url" content="https://ipfscloud.store" />
+    <meta property="og:site_name" content="IpfsCloud"/>
+    <meta property="og:description" content="A Decentralised, Anonymous Cloud Storage Platform on Ipfs. Upload and Store documents, files, folders, Photos, Videos, Movies. A fully decentralized, anonymous, free and unlimited cloud storage platform."/>
+    <meta property="og:image:alt" content="IpfsCloud" />
+
+    <meta name="description" content="A Decentralised Cloud Storage Platform. Upload and Store documents, Photos, Videos, Movies. A fully decentralized, free and unlimited cloud storage platform.">
+
+
+    <meta name="description" content="A Decentralised, Anonymous Cloud Storage Platform on Ipfs. Upload and Store documents, files, folders, Photos, Videos, Movies. A fully decentralized, anonymous, free and unlimited cloud storage platform.">
+    
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/shards.min.css">
+    <link rel="stylesheet" href="styles/example.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/app-loading.min.css?v=0.0.5">
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+  </head>
+  <body style="background-color: black">
+    <center >
+    <div class="col-12 col-sm-4 text-center  mb-0" >
+
+
+        <div class="card" style="margin-top : 40px" >
+          <div class="card-body" style="background-color: #FFD700">
+            <h4><font color="#0071f7"> Mon Profil </font></h4>
+
+            <form onSubmit={this.onSubmit} id="uploadForm" action="" method="post" enctype="multipart/form-data"><label for="addFileCard">
+                      <img id="profile_pic" src="https://gateway.ipfs.io/ipfs/QmbbnkCgDGsQzhk1DWbczMSAHgAxCYNTdikGhmoN262Xpg" data-toggle="tooltip" data-placement="bottom" title="Click to change" width="140px" height="140px">
+                      </label></form><input type="file" id="addFileCard" style="display: none" onchange="changeProfilePic()"/>
+
+
+
+            <div class="input-group input-group-seamless"><span class="input-group-prepend"><span class="input-group-text"><i class="fa fa-user"></i> </span></span><input id="username" type="text" class="form-control" id="form1-username" placeholder="Username"></div>
+            <div><small><font id="username_error" color="#c4183c"></font></small></div>
+            <br>
+            <div class="input-group input-group-seamless"><span class="input-group-prepend"><span class="input-group-text"><i class="fa fa-envelope"></i> </span></span><input id="email" type="text" class="form-control" id="form1-username" placeholder="Email"></div>
+            <div><small><font id="email_error" color="#c4183c"></font></small></div>
+            <br>
+
+            <div class="text-center text-sm-left">
+              <font size="2" id="forgot_password" color="blue" style="padding: 3px"><b>Modifier le mot de passe</b></font></a>
+            </div>
+            
+            <table>
+              <tr>
+                <td width="195px" valign="bottom">
+                  <div class="text-center text-sm-left">
+                    <a href="index.html"><h6><font color="#0071f7">Aller à  DocChain</font></h6></a>
+                  </div>
+                </td>
+                <td width="195px">
+                  <div class="text-center text-sm-right" style="margin-top: 20px">
+                    <button type="button" id="update" class="btn btn-primary">Modifier</button>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+    </div>
+        <!--UPLOAD STATUS-->
+    <div class="popup animated" id="upload_status">
+      <div class="pp-inner-content">
+        <center>
+        <h6 id="upload_status_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enregistrement...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+        <div class="progress">
+          <div class="progress-bar" id="upload_progress" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><font class="progress-value" id="progress-value"></font></div>
+        </div>
+        </center>
+      </div>
+    </div>
+
+    <div class="popup animated" id="shareable_link_popup" style="background: #4D4D4E">
+      <div class="pp-inner-content">
+        <center>
+        <h6><font color="white" id="popup_text">&nbsp;&nbsp;Profil modifié&nbsp;&nbsp;</font></h6>
+        </center>
+      </div>
+    </div>
+
+    </center>
+    <!-- Optional JavaScript -->
+    <!-- JavaScript Dependencies: jQuery, Popper.js, Bootstrap JS, Shards JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="scripts/shards.min.js"></script>
+    <script src="scripts/app-loading.min.js?v=0.0.5"></script>
+    <script src="scripts/profile.js"></script>
+    <script src="scripts/extras.1.1.0.min.js"></script>
+  </body>
+</html>

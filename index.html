@@ -1,0 +1,485 @@
+<!doctype html>
+<html class="no-js h-100" lang="fr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127967002-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-127967002-1');
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> DocChain | Mes Documents</title>
+
+    <link rel="shortcut icon" href="images/icon.png">
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="IPFS Cloud"/>
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image" content="https://gateway.ipfs.io/ipfs/QmRLzph5w13K8MKb2wj9bcJ8gQxQBFho4HG1p5pGpWimn9"/>
+    <meta property="og:url" content="https://ipfscloud.store" />
+    <meta property="og:site_name" content="IpfsCloud"/>
+    <meta property="og:description" content="A Decentralised, Anonymous Cloud Storage Platform on Ipfs. Upload and Store documents, files, folders, Photos, Videos, Movies. A fully decentralized, anonymous, free and unlimited cloud storage platform."/>
+    <meta property="og:image:alt" content="IpfsCloud" />
+    <meta name="description" content="A Decentralised, Anonymous Cloud Storage Platform on Ipfs. Upload and Store documents, files, folders, Photos, Videos, Movies. A fully decentralized, anonymous, free and unlimited cloud storage platform.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="google-site-verification" content="0ZNS6NysDFCq_o0qN_naosorOxKJFY5AscH4rQdMlDs" />
+
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="styles/shards-dashboards.1.1.0.min.css">
+    <link rel="stylesheet" href="styles/extras.1.1.0.min.css">
+    <link rel="stylesheet" href="styles/example.css">
+    <link rel="stylesheet" href="styles/shards.min.css">
+    <link rel="stylesheet" href="styles/glightbox.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <!--FIREBASE-->
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://unpkg.com/ipfs-api/dist/index.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.3/mobile-detect.min.js"></script>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </head>
+  <body class="h-100" >
+    <input type="text" value="" id="clipboard">
+    <div class="color-switcher animated visible" style="background-color: #FFD700">
+      <div class="social-wrapper" >
+        <a class="mb-2 btn btn-sm btn-black w-100 d-table mx-auto extra-action" href="donate.html" target="_blank"><img alt="Get Cash icon" src="https://img.icons8.com/material/2x/get-cash.png" style="height: 12px; width: 12px;">&nbsp;&nbsp;Donate</a>
+        <a class="mb-2 btn btn-sm btn-black w-100 d-table mx-auto extra-action" href="https://www.getpostman.com/collections/b71841cf47f7f1df781c"><i class="material-icons">book</i> API docs</a>
+        <a class="mb-2 btn btn-sm btn-black w-100 d-table mx-auto extra-action" href="https://gateway.ipfs.io/ipfs/QmcgCK3eiHAoKgRJoqHsCu8ahkdt2nH1yWnPEAkp36EKkR" target="_blank"><i class="material-icons">navigation</i> Feuille de route</a>
+        <div class="social-actions">
+          <h5 class="my-2">Help us Grow</h5>
+          <div class="inner-wrapper">
+            <span></span>
+            <!-- <iframe style="width: 91px; height: 21px;"src="https://yvoschaap.com/producthunt/counter.html#href=https%3A%2F%2Fwww.producthunt.com%2Fr%2Fp%2F112998&layout=wide" width="56" height="65" scrolling="no" frameborder="0" allowtransparency="true"></iframe> -->
+          </div>
+        </div>
+        <!-- TWITTER BUTTON -->
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="🔥 Check out  DocChain, a decentralized, anonymous storage platform on IPFS" data-url="https://ipfscloud.store" data-via="vasa_develop" data-hashtags="ipfs,ipfscloud,towardsblockchain" data-related="vasa_develop,ipfscloud" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        <!-- FACEBOOK BUTTON -->
+        <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fipfscloud.store&layout=button_count&size=small&mobile_iframe=true&appId=720721218260653&width=69&height=20" width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+        <br>
+
+        <!-- Place this tag where you want the button to render. -->
+        <a class="github-button" href="https://github.com/vasa-develop/ipfscloud" data-show-count="true" aria-label="Star vasa-develop/ipfscloud on GitHub">Star</a>
+
+        <div class="loading-overlay" style="display: none;">
+          <div class="spinner"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="color-switcher-toggle animated pulse infinite">
+      <i class="material-icons">share</i>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Main Sidebar -->
+        <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0" style="background-color: black; color:lightgray;">
+          <div class="main-navbar">
+            <nav class="navbar align-items-stretch navbar-light bg-black flex-md-nowrap border-bottom p-0">
+              <a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
+                <div class="d-table m-auto">
+                  <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="images/icon.png" alt="Shards Dashboard">
+                  <span class="d-none d-md-inline ml-1" style="color:#FFD700"> DocChain</span>
+                </div>
+              </a>
+              <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
+                <i class="material-icons">&#xE5C4;</i>
+              </a>
+            </nav>
+          </div>
+          <form action="#" class="main-sidebar__search w-100 border-right d-sm-flex d-md-none d-lg-none">
+            <div class="input-group input-group-seamless ml-3">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fas fa-search"></i>
+                </div>
+              </div>
+              <input class="navbar-search form-control" type="text" placeholder="Rechercher quelque-chose..." aria-label="Search"> </div>
+          </form>
+           <div class="nav-wrapper">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">
+                  <img src="images/folder.png">
+                  <span style="font-weight: bold; color: #FFD700">Mes Documents</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="private.html">
+                  <img src="images/private.png">
+                  <span color="white" style="font-weight: bold; color: #FFD700">Mes documents privés</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="recu.html">
+                  <img src="images/metam.png" width="30px" height="30px">
+                  <span color="white" style="font-weight: bold; color: #FFD700">Recu dépôt de document</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sync.html">
+                  <img src="images/syncing.png">
+                  <span color="white" style="font-weight: bold; color: #FFD700">Sync avec mobile</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="devices.html">
+                  <img src="images/devices.png">
+                  <span color="white" style="font-weight: bold; color: #FFD700">Mes appareils</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="host.html">
+                  <img src="images/server.png">
+                  <span color="white" style="font-weight: bold; color: #FFD700">hébergement website gratuit</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+        <!-- End Main Sidebar -->
+        <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3" >
+          <div class="main-navbar sticky-top bg-black" >
+            <!-- Main Navbar -->
+            <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
+              <form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
+                <div class="input-group input-group-seamless ml-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fas fa-search"></i>
+                    </div>
+                  </div>
+                  <input class="navbar-search form-control" type="text" placeholder="Rechercher quelque-chose..." aria-label="Search"> </div>
+              </form>
+              <ul class="navbar-nav border-left flex-row " id="navbar_options" style="visibility: hidden;">
+                <li class="nav-item dropdown"  data-toggle="tooltip" data-placement="bottom" title="télécharger">
+                  <a id="download" style="display: none;" onclick="downloadLink()" class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="nav-link-icon__wrapper">
+                      <i id="docView" class="material-icons">save_alt</i>
+                    </div>
+                  </a>
+                </li>
+                <li class="nav-item dropdown" id="deleteDocument" style="display: none;" data-toggle="tooltip" data-placement="bottom" title="supprimer">
+                  <a onclick="deleteDoc()" class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="nav-link-icon__wrapper">
+                      <i id="docView" class="material-icons">delete</i>
+                    </div>
+                  </a>
+                </li>
+                <li class="nav-item dropdown" id="shareable_link" style="display: none;" data-toggle="tooltip" data-placement="bottom" title="lien partageable">
+                  <a class="nav-link nav-link-icon text-center" onclick="copyLink()" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="nav-link-icon__wrapper">
+                      <i id="docView" class="material-icons">link</i>
+                    </div>
+                  </a>
+                </li>
+                <li class="nav-item dropdown" id="share" style="display: none;" data-toggle="tooltip" data-placement="bottom" title="partager">
+                  <a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="nav-link-icon__wrapper">
+                      <i id="docView" class="material-icons">share</i>
+                    </div>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-small">
+
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#emailModal" onclick="restoreEmailModal()">
+                      <i class="material-icons">email</i>Partager via email</a>
+                      </label>
+                  </div>
+                </li>
+                <li class="nav-item dropdown" id="view" style="display: none;" data-toggle="tooltip" data-placement="bottom" title="Voir document">
+                  <a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="viewDocument()">
+                    <div class="nav-link-icon__wrapper">
+                      <i id="docView" class="material-icons">visibility</i>
+                    </div>
+                  </a>
+                </li>
+                <li class="nav-item dropdown" data-toggle="tooltip" data-placement="bottom" title="Ajouter un nouveau document">
+                  <a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="nav-link-icon__wrapper">
+                      <img src="https://gateway.ipfs.io/ipfs/QmbKFmrKGg2KwJ8RJuwu7SPruk2kwqwhYHiD1LwrQpwtsK" height="40px" width="40px">
+                    </div>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-small">
+
+                    <a class="dropdown-item" href="#">
+                      <form onSubmit={this.onSubmit} id="uploadForm" action="" method="post" enctype="multipart/form-data"><label for="addFolderCard">
+                      <i class="material-icons">create_new_folder</i>Nouveau dossier</a>
+                      </label></form><input type="file" id="addFolderCard" style="display: none" onchange="intiateFolderUpload(event)" webkitdirectory directory multiple/>
+
+                    <a class="dropdown-item" href="#">
+                      <form onSubmit={this.onSubmit} id="uploadForm" action="" method="post" enctype="multipart/form-data">
+                      <label for="addFileCard">
+                      <i class="material-icons">note_add</i>Nouveau fichier</a>
+                      </label></form><input type="file" id="addFileCard" style="display: none" onchange="intiateFileUpload()"/>
+                  </div>
+                </li>
+                <li class="nav-item border-right dropdown notifications" data-toggle="tooltip" data-placement="bottom" title="Partage or entreprise...">
+                  <a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="updateNotificationPill()">
+                    <div class="nav-link-icon__wrapper">
+                      <i class="material-icons">mail</i>
+                      <span class="badge badge-pill badge-primary" id="notifications_pill">1</span>
+                    </div>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-small" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="email.html" target="_blank">
+                      <div class="notification__icon-wrapper">
+                        <div class="notification__icon">
+                          <i class="material-icons">mail_outline</i>
+                        </div>
+                      </div>
+                      <div class="notification__content">
+                        <span class="notification__category">Partager un fichier à une correspondant?</span>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown" data-toggle="tooltip" data-placement="bottom" title="Profil">
+                  <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <img class="user-avatar rounded-circle mr-2" id="profile_pic" src="./images/user1.png" width="40px" height="40px" alt="User Avatar">
+                    <span class="d-none d-md-inline-block" id="userId"></span>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-small" id="profile_dropdown">
+                      <a class="dropdown-item text-success" href="profile.html">
+                      <i class="material-icons text-success">face</i>Profil</a>
+                      <div class="dropdown-divider"></div>
+                    <a id="ipfs" class="dropdown-item text-success" href="chat.html">
+                      <i class="material-icons text-success">chat</i> Chat </a>
+                    <div class="dropdown-divider"></div>
+                    <a id="ipfs" class="dropdown-item text-success" href="http://localhost:5001/webui">
+                      <i class="material-icons text-success">assignment</i> Mon noeud ipfs </a>
+                      <div class="dropdown-divider"></div>
+                    <a id="logout" class="dropdown-item text-danger" href="#">
+                      <i class="material-icons text-danger"></i> Déconnecter </a>
+                      
+                  </div>
+                </li>
+              </ul>
+              <nav class="nav">
+                <a href="#" class="nav-link nav-link-icon toggle-sidebar d-md-inline d-lg-none text-center border-left" data-toggle="collapse" data-target=".header-navbar" aria-expanded="false" aria-controls="header-navbar">
+                  <i class="material-icons">&#xE5D2;</i>
+                </a>
+              </nav>
+            </nav>
+          </div>
+          <!-- / .main-navbar -->
+          <div class="main-content-container container-fluid px-4" id="loader" >
+          <center><img src='./gifs/grey_loader.gif'></center>
+          </div>
+
+          <div class="main-content-container container-fluid px-4" id="signup" >
+             <!-- Page Header -->
+            <div class="page-header row no-gutters py-4">
+              <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+                <h3 class="page-title"> DocChain</h3>
+                <hr>
+                <center><h5>Inscription</h5></center>
+              </div>
+            </div>
+            <center>
+            <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+            <div class="modal-body" id="login_methods">
+              <div id="gSignInWrapper">
+                <div id="customBtn" class="customGPlusSignIn" onclick="signInAnonymously()">
+                  &nbsp;&nbsp;<span class="icon"><img src="./images/anonymous.png" width="38px" height="38px"></span>
+                  <span class="buttonText">Anonyme</span><br>
+                </div>
+              </div>
+              <br>
+              <div id="gSignInWrapper">
+                <div id="customBtn" class="customGPlusSignIn" onclick="signInViaGoogle()">
+                  &nbsp;&nbsp;<span class="icon"><img src="./images/google.jpeg" width="38px" height="38px"></span>
+                  <span class="buttonText">Google</span>
+                </div>
+              </div>
+              <br>
+              <div id="gSignInWrapper">
+                <div id="customBtn" class="customGPlusSignIn" onclick="signInViaMetamask()">
+                  &nbsp;&nbsp;<span class="icon"><img src="./images/metamask.png" width="38px" height="38px"></span>
+                  <span class="buttonText">Metamask</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          </center>
+          </div>
+          <div class="main-content-container container-fluid px-4" id="documents" style="background-color: #FFD700; color:black;">
+            <!-- Page Header -->
+            <div id="data_items">
+            <div id="folders">
+            <div class="page-header row no-gutters py-4">
+              <div class="col-12 col-sm-12 text-center text-sm-left mb-0">
+                <span class="page-title" id="title">  DocChain </span>
+                <hr>
+                <h5 id="folderHolderTitle">Dossiers</h5>
+              </div>
+            </div>
+            <!-- End Page Header -->
+            <!-- Small Stats Blocks -->
+
+            <!--EMAIL MODAL-->
+            <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Partager via Email</h5></p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body" id="pubKey-body">
+                    <center>
+                      <div>
+                        <input type="email" class="form-control" id="form1-pubKey"  ="abc@gmail.com">
+                        <p><font color="red" id="invalid_pubkey"></font></p>
+                        <button type="button" class="btn btn-primary" onclick="shareViaEmail()">Envoyer</button>
+                      </div>
+                    </center>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="modal fade" id="introModal" tabindex="-1" role="dialog" aria-labelledby="introModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-body" id="pubKey-body">
+                    <center id="intro1">
+                      <img src="https://gateway.ipfs.io/ipfs/QmRLzph5w13K8MKb2wj9bcJ8gQxQBFho4HG1p5pGpWimn9" height="200px" width="200px">
+                      <h5><b>Own Your Data</b></h5>
+                      <font>Say NO to data <br>
+                      Monitoring and Theft.</font>
+                      <br><br>
+                      <button type="button" class="btn btn-primary" onclick="next('#intro1', '#intro2')">Suivant</button>
+                      <br><br>
+                      <span class="dot_active"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </center>
+
+                    <center id="intro2" style="display: none;">
+                      <img src="https://gateway.ipfs.io/ipfs/QmdtXVeEJw7tyqwR2vmGxM4m8c7PUfFhocK5dQqSP3WPs5" height="200px" width="200px">
+                      <h5><b>Privacy</b></h5>
+                      <font>You decide exactly what you<br>
+                       want to share, and what to<br>
+                      keep private.</font>
+                      <br><br>
+                      <button type="button" class="btn btn-primary" onclick="next('#intro2', '#intro3')">Suivant</button>
+                      <br><br>
+                      <span class="dot"></span>
+                      <span class="dot_active"></span>
+                      <span class="dot"></span>
+                    </center>
+
+                    <center id="intro3" style="display: none;">
+                      <img src="https://gateway.ipfs.io/ipfs/QmcDPerrwp8ovanKCF9GRecJPy981JRy8nqv1i2QFxBdoX" height="200px" width="200px">
+                      <h5><b>Security</b></h5>
+                      <font>Secure your data<br>
+                       using State-of-the-art<br>
+                      cryptographic methods.</font>
+                      <br><br>
+                      <button type="button" class="btn btn-primary" onclick="document.getElementById('startIntro').click()">Take me to  DocChain</button>
+                      <br><br>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot_active"></span>
+                    </center>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span id="startIntro" data-toggle="modal" data-target="#introModal"></span>
+
+
+            <div id="folderHolder">
+
+            </div>
+            </div>
+
+            <div id="files">
+            <div>
+            <div class="page-header row no-gutters py-4">
+              <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+                <h5>Fichiers</h5>
+              </div>
+            </div>
+
+            <!-- End Small Stats Blocks -->
+            <div id="fileHolder">
+
+            </div>
+            </div>
+            </div>
+            </div>
+          </div>
+
+          
+        </main>
+      </div>
+    </div>
+
+    <div id="inlineHolder"></div>
+
+    <!--UPLOAD STATUS-->
+    <div class="popup animated" id="upload_status">
+      <div class="pp-inner-content">
+        <center>
+        <h6 id="upload_status_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enregistrement...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+        <div class="progress">
+          <div class="progress-bar" id="upload_progress" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><font class="progress-value" id="progress-value"></font></div>
+        </div>
+        </center>
+      </div>
+    </div>
+
+    <div class="popup animated" id="shareable_link_popup" style="background: #4D4D4E">
+      <div class="pp-inner-content">
+        <center>
+        <h6 id="upload_status_text"><font color="black">&nbsp;&nbsp;Lien copié dans le presse-papier&nbsp;&nbsp;</font></h6>
+        </center>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="scripts/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+    <script src="scripts/extras.1.1.0.min.js"></script>
+    <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
+    <script src="scripts/app/app-blog-overview.1.1.0.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/glightbox.min.js"></script>
+    <script>
+      var lightbox = GLightbox();
+      var lightboxDescription = GLightbox({
+        selector: 'glightbox2'
+      });
+      var lightboxVideo = GLightbox({
+        selector: 'glightbox3',
+        jwplayer: {
+          api: 'https://content.jwplatform.com/libraries/QzXs2BlW.js',
+          licenseKey: 'imB2/QF0crMqHks7/tAxcTRRjnqA9ZwxWQ2N1A=='
+        }
+      });
+      var lightboxInlineIframe = GLightbox({
+        'selector': 'glightbox4'
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,358 @@
+<!doctype html>
+<html class="no-js h-100" lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127967002-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-127967002-1');
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>DocChain | Hébergement gratuit</title>
+
+    <link rel="shortcut icon" href="images/icon.png">
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="IPFS Cloud"/>
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image" content="https://gateway.ipfs.io/ipfs/QmRLzph5w13K8MKb2wj9bcJ8gQxQBFho4HG1p5pGpWimn9"/>
+    <meta property="og:url" content="https://ipfscloud.store" />
+    <meta property="og:site_name" content="IpfsCloud"/>
+    <meta property="og:description" content="A Decentralised, Anonymous Cloud Storage Platform on Ipfs. Upload and Store documents, files, folders, Photos, Videos, Movies. A fully decentralized, anonymous, free and unlimited cloud storage platform."/>
+    <meta property="og:image:alt" content="IpfsCloud" />
+    <meta name="description" content="A Decentralised, Anonymous Cloud Storage Platform on Ipfs. Upload and Store documents, files, folders, Photos, Videos, Movies. A fully decentralized, anonymous, free and unlimited cloud storage platform.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="styles/shards-dashboards.1.1.0.min.css">
+    <link rel="stylesheet" href="styles/extras.1.1.0.min.css">
+    <link rel="stylesheet" href="styles/shards.min.css">
+    <link rel="stylesheet" href="styles/example.css">
+    
+    <style type="text/css">
+      #nowebsite{
+        background-color: #f5f6f8;
+      }
+      #new_website{
+        background-color: #f5f6f8;
+      }
+      #websites{
+        background-color: #f5f6f8;
+      }
+    </style>
+
+    <!--FIREBASE-->
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </head>
+  <body class="h-100">
+    <div class="color-switcher animated visible" style="background-color: #FFD700">
+      <div class="social-wrapper" >
+        <a class="mb-2 btn btn-sm btn-black w-100 d-table mx-auto extra-action" href="donate.html" target="_blank"><img alt="Get Cash icon" src="https://img.icons8.com/material/2x/get-cash.png" style="height: 12px; width: 12px;">&nbsp;&nbsp;Donate</a>
+        <a class="mb-2 btn btn-sm btn-black w-100 d-table mx-auto extra-action" href="https://www.getpostman.com/collections/b71841cf47f7f1df781c"><i class="material-icons">book</i> API docs</a>
+        <a class="mb-2 btn btn-sm btn-black w-100 d-table mx-auto extra-action" href="https://gateway.ipfs.io/ipfs/QmcgCK3eiHAoKgRJoqHsCu8ahkdt2nH1yWnPEAkp36EKkR" target="_blank"><i class="material-icons">navigation</i> Feuille de route</a>
+        <div class="social-actions">
+          <h5 class="my-2">Help us Grow</h5>
+          <div class="inner-wrapper">
+            <span></span>
+            <!-- <iframe style="width: 91px; height: 21px;"src="https://yvoschaap.com/producthunt/counter.html#href=https%3A%2F%2Fwww.producthunt.com%2Fr%2Fp%2F112998&layout=wide" width="56" height="65" scrolling="no" frameborder="0" allowtransparency="true"></iframe> -->
+          </div>
+        </div>
+        <!-- TWITTER BUTTON -->
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="🔥 Check out  DocChain, a decentralized, anonymous storage platform on IPFS" data-url="https://ipfscloud.store" data-via="vasa_develop" data-hashtags="ipfs,ipfscloud,towardsblockchain" data-related="vasa_develop,ipfscloud" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        <!-- FACEBOOK BUTTON -->
+        <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fipfscloud.store&layout=button_count&size=small&mobile_iframe=true&appId=720721218260653&width=69&height=20" width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+        <br>
+
+        <!-- Place this tag where you want the button to render. -->
+        <a class="github-button" href="https://github.com/vasa-develop/ipfscloud" data-show-count="true" aria-label="Star vasa-develop/ipfscloud on GitHub">Star</a>
+
+        <div class="loading-overlay" style="display: none;">
+          <div class="spinner"></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="color-switcher-toggle animated pulse infinite">
+      <i class="material-icons">share</i>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Main Sidebar -->
+        <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0" style="background-color: black; color:#FFD700;">
+          <div class="main-navbar">
+            <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
+              <a class="navbar-brand w-100 mr-0" href="index.html" style="line-height: 25px;">
+                <div class="d-table m-auto">
+                  <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="images/icon.png" alt="Shards Dashboard">
+                  <span class="d-none d-md-inline ml-1" style="color: #FFD700">DocChain</span>
+                </div>
+              </a>
+              <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
+                <i class="material-icons">&#xE5C4;</i>
+              </a>
+            </nav>
+          </div>
+          <form action="#" class="main-sidebar__search w-100 border-right d-sm-flex d-md-none d-lg-none">
+            <div class="input-group input-group-seamless ml-3">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fas fa-search"></i>
+                </div>
+              </div>
+              <input class="navbar-search form-control" type="text" placeholder="Rechercher quelque-chose..." aria-label="Search"> </div>
+          </form>
+           <div class="nav-wrapper">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                  <img src="images/folder.png">
+                  <span style="font-weight: bold; color: #FFD700">Mes Documents</span>
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="private.html">
+                  <img src="images/private.png">
+                  <span color="white" style="font-weight: bold; color: #FFD700">Mes documents privés</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="recu.html">
+                  <img src="images/metam.png" width="30px" height="30px">
+                  <span color="white" style="font-weight: bold; color: #FFD700">Recu dépôt de document</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sync.html">
+                  <img src="images/syncing.png">
+                  <span color="white" style="font-weight: bold; color: #FFD700">Sync avec mobile</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="devices.html">
+                  <img src="images/devices.png">
+                  <span color="white" style="font-weight: bold; color: #FFD700">Mes appareils</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="host.html">
+                  <img src="images/server.png">
+                  <span color="white" style="font-weight: bold; color: #FFD700">hébergement website gratuit</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+        </aside>
+        <!-- End Main Sidebar -->
+        <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
+          <div class="main-navbar sticky-top bg-white">
+            <!-- Main Navbar -->
+            <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
+              <form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
+                <div class="input-group input-group-seamless ml-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fas fa-search"></i>
+                    </div>
+                  </div>
+                  <input class="navbar-search form-control" type="text" placeholder="Rechercher quelque-chose..." aria-label="Search"> </div>
+              </form>
+              <ul class="navbar-nav border-left flex-row " id="navbar_options">
+                <li class="nav-item border-right dropdown notifications" data-toggle="tooltip" data-placement="bottom" title="Partage or entreprise...">
+                  <a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="updateNotificationPill()">
+                    <div class="nav-link-icon__wrapper">
+                      <i class="material-icons">mail</i>
+                      <span class="badge badge-pill badge-primary" id="notifications_pill">1</span>
+                    </div>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-small" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="email.html" target="_blank">
+                      <div class="notification__icon-wrapper">
+                        <div class="notification__icon">
+                          <i class="material-icons">mail_outline</i>
+                        </div>
+                      </div>
+                      <div class="notification__content">
+                        <span class="notification__category">Partager un fichier à une correspondant?</span>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown" data-toggle="tooltip" data-placement="bottom" title="Profile">
+                  <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <img class="user-avatar rounded-circle mr-2" id="profile_pic" src="./images/user1.png" width="40px" height="40px" alt="User Avatar">
+                    <span class="d-none d-md-inline-block" id="userId"></span>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-small" id="profile_dropdown">
+                      <a class="dropdown-item text-success" href="profile.html">
+                      <i class="material-icons text-success">face</i>Profil</a>
+                      <div class="dropdown-divider"></div>
+                    <a id="ipfs" class="dropdown-item text-success" href="chat.html">
+                      <i class="material-icons text-success">chat</i> Chat </a>
+                    <div class="dropdown-divider"></div>
+                    <a id="ipfs" class="dropdown-item text-success" href="http://localhost:5001/webui">
+                      <i class="material-icons text-success">assignment</i> Mon noeud ipfs </a>
+                      <div class="dropdown-divider"></div>
+                    <a id="logout" class="dropdown-item text-danger" href="#">
+                      <i class="material-icons text-danger"></i> Déconnecter </a>
+                      
+                  </div>
+                </li>
+              </ul>
+              <nav class="nav">
+                <a href="#" class="nav-link nav-link-icon toggle-sidebar d-md-inline d-lg-none text-center border-left" data-toggle="collapse" data-target=".header-navbar" aria-expanded="false" aria-controls="header-navbar">
+                  <i class="material-icons">&#xE5D2;</i>
+                </a>
+              </nav>
+            </nav>
+          </div>
+          <!-- / .main-navbar -->
+
+			<!--MAIN LOADER -->          
+          <div id="loader" class="main-content-container container-fluid px-4">
+          	<div class="page-header row no-gutters py-4">
+			  <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+			    <span class="text-uppercase page-subtitle" style="color:black; font-weight:bold;">DocChain</span>
+			    <hr>
+			    <h3 class="page-title" style="color:white; font-weight:black;">Hébergement gratuit de site web</h3>
+			  </div>
+			</div>
+	        <center><img src='./gifs/grey_loader.gif'></center>
+	      </div>
+
+	      <!--NO WEBSITES -->
+	       <div id="nowebsite" class="main-content-container container-fluid px-4" style="background-color: #FFD700; color:black;">
+            	<center>
+            		<div class="page-header row no-gutters py-4">
+					  <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+					    <span class="text-uppercase page-subtitle" style="color:black; font-weight:bold;">DocChain</span>
+					    <hr>
+					    <h3 class="page-title" style="color:black; font-weight:black;">Hébergement gratuit de site web</h3>
+					  </div>
+					</div>
+            		<h5><font color="black">Pas encore de site web ici...</font></h5>
+            		<br>
+            		<button type="button" class="btn btn-success btn-pill" onclick="addWebsiteName()">Héberger un site web</button>
+            		<br><br><br><br>
+	            	<h6><font color="blue"><a href="#">Regarder la vidéo pour voir comment héberger un site web sur notre plateforme</a></font> </h6>
+	            
+            	</center>
+           </div>
+
+           <!--NO WEBSITES -->
+	       <div id="new_website" class="main-content-container container-fluid px-4" style="background-color: #FFD700">
+	       	<div class="page-header row no-gutters py-4">
+			  <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+			    <span class="text-uppercase page-subtitle" style="color:black; font-weight:bold;">DocChain</span>
+			    <hr>
+			    <h3 class="page-title" style="color:black; font-weight:bold;">Hébergement gratuit de site web</h3>
+			  </div>
+			</div>
+
+
+            	<div id="add_website_name">
+            		<center>
+            			<h6 class="text-muted mb-3">Le nom de votre site web</h6>
+            			<div class="form-group col-md-6"><div class="input-group input-group-seamless"><span class="input-group-prepend"><span class="input-group-text"><i class="fa fa-globe"></i> </span></span><input type="text" class="form-control" id="website_name" placeholder="vasa.com"></div></div>
+            			<div><small><font id="url_error" color="#c4183c"></font></small></div>
+            			<br>
+            			<h6 id="website_url">URL:&nbsp;&nbsp; <font color='#c1c3c5'>https://tonsite.host/</font><font color='blue'>docchain.com</h6>
+            			<br>
+            			<button type="button" class="btn btn-primary btn-pill" id="next" onclick="addWebsite()">Suivant</button>
+            		</center>
+	            </div>
+
+
+	            <div id="upload_website"  >
+	            	<center>
+	            		<div class="col-md-6 pl-0"><h6 class="text-muted mb-3">Télécharger votre site web <b><font color="blue" size="5">ZIP</font></b> file</h6><fieldset><div class="custom-file w-100"><input type="file" class="custom-file-input" id="customFile" required=""><label class="custom-file-label" id="file_label" for="customFile">Choisir un fichier...</label></div></fieldset></div>
+            			<br><br>
+            			<button type="button" class="btn btn-primary btn-pill" onclick="uploadWebsite()">télécharger</button>
+            			<button type="button" id="change_website_name" class="btn btn-primary btn-pill" onclick="addWebsiteName()">Modifier le nom du site web</button>
+	            	</center>
+	            </div>
+
+	            <div id="your_website"  ">
+	            	<center>
+	            		<h3><font color="#006fe6">Hang Tight</font></h3>
+	            		<br>
+	            		<h5>Construire ton propre site web</h5>
+	            		<br>
+	            		<h6><font id="final_url" color="blue"></font></h6>
+	            	</center>
+	            </div>
+	            <br><br><br><br>
+	            <center>
+	            	<h6><font color="white"><a href="#">Regarder la vidéo pour voir comment héberger un site web sur notre plateforme</a></font> </h6>
+	            </center>
+	            
+           </div>
+
+           <!--WEBSITE HOLDER -->
+          <div id="websites" class="main-content-container container-fluid px-4" >
+            <!-- Page Header -->
+            <div class="page-header row no-gutters py-4">
+			  <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+			    <span class="text-uppercase page-subtitle" style="color:black; font-weight:bold;">DocChain</span>
+			    <hr>
+			    <h3 class="page-title" style="color:black; font-weight:bold;">Hébergement gratuit de site web</h3>
+			  </div>
+			</div>
+			<div id="websiteHolder"></div>
+			<br><br><br>
+			<center>
+			<h5><font color="#c1c3c5">Ajouter un site web</font></h5>
+            <br>
+            <button type="button" class="btn btn-primary btn-pill" onclick="addWebsiteName()">Héberger un site web</button>
+            <br><br><br><br>
+	        <h6><font color="white"><a href="#">Regardez cette vidéo pour voir comment héberger un site web</a></font> </h6>
+	        <br><br>
+	        </center>
+            <!-- End Page Header -->
+            <!-- Small Stats Blocks -->
+          </div>
+
+
+          </main>
+      </div>
+    </div>
+
+
+			<!--UPLOAD STATUS-->
+		    <div class="popup animated" id="upload_status">
+		      <div class="pp-inner-content">
+		        <center>
+		        <h6 id="upload_status_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Téléchargement...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+		        <div class="progress">
+		          <div class="progress-bar" id="upload_progress" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><font class="progress-value" id="progress-value"></font></div>
+		        </div>
+		        </center>
+		      </div>
+		    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="scripts/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+    <script src="scripts/extras.1.1.0.min.js"></script>
+    <script src="scripts/shards.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pako/1.0.4/pako_deflate.min.js"></script>
+    <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
+    <script src="scripts/app/app-blog-overview.1.1.0.js"></script>
+    <script src="scripts/host.js"></script>
+  </body>
+</html>
