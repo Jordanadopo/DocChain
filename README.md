@@ -1,9 +1,13 @@
 # DocChain
 DocChain: A Decentralized, Anonymous Cloud Storage Platform on IPFS. 
 <p align="center">
-  <img src="Flask/res.PNG" width="30%" title="Recognition terminated" alt="The result of the recognition">
-  <img src="Flask/res.PNG" width="30%" title="Recognition terminated" alt="The result of the recognition">
-  <img src="Flask/res.PNG" width="30%" title="Recognition terminated" alt="The result of the recognition">
+  <img src="doc1.PNG" width="90%" title="Doc storage" alt="The public page for docs stored">
+  </p><br/>
+  <p align="center">
+  <img src="doc2.PNG" width="90%" title="Transaction receipt" alt="load doc to get the receipt of it storage transaction">
+  </p><br/>
+  <p align="center">
+  <img src="doc3.PNG" width="90%" title="Chat" alt="Chat page between members of the same decentralized network">
 </p><br/>
 ## Using Doc_Chain Locally.
 
