@@ -1,6 +1,10 @@
 # DocChain
 DocChain: A Decentralized, Anonymous Cloud Storage Platform on IPFS. 
-
+<p align="center">
+  <img src="Flask/res.PNG" width="30%" title="Recognition terminated" alt="The result of the recognition">
+  <img src="Flask/res.PNG" width="30%" title="Recognition terminated" alt="The result of the recognition">
+  <img src="Flask/res.PNG" width="30%" title="Recognition terminated" alt="The result of the recognition">
+</p><br/>
 ## Using Doc_Chain Locally.
 
 * Clone the repository: `git clone https://github.com/Jordanadopo/DocChain.git`
